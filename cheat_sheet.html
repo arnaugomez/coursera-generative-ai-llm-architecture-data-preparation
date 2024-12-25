@@ -1,0 +1,212 @@
+<html>
+  <head>
+    <style>
+      .linenums {
+        list-style-type: none;
+      }
+
+      .formatted-line-numbers {
+        display: none;
+      }
+      .action-code-block {
+        display: none;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h2><span class="header-link octicon octicon-link"></span>Cheat Sheet</h2>
+    <table>
+      <colgroup>
+        <col style="width: 9%" />
+        <col style="width: 57%" />
+        <col style="width: 57%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Package/Method</th>
+          <th>Description</th>
+          <th>Code example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td>NLTK</td>
+          <td>
+            NLTK is a Python library used in natural language processing (NLP)
+            for tasks such as tokenization and text processing. The code example
+            shows how you can tokenize text using the NLTK word-based tokenizer.
+          </td>
+          <td>
+            <pre
+              class="prettyprint linenums prettyprinted"
+              style=""
+            ><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li></ol><ol class="linenums"><li class="L0"><span class="kwd">import</span><span class="pln"> nltk</span></li><li class="L1"><span class="pln">nltk</span><span class="pun">.</span><span class="pln">download</span><span class="pun">(</span><span class="str">"punkt"</span><span class="pun">)</span></li><li class="L2"><span class="kwd">from</span><span class="pln"> nltk</span><span class="pun">.</span><span class="pln">tokenize </span><span class="kwd">import</span><span class="pln"> word_tokenize</span></li><li class="L3"><span class="pln">text </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Unicorns are real. I saw a unicorn yesterday. I couldn't see it today."</span></li><li class="L4"><span class="pln">token </span><span class="pun">=</span><span class="pln"> word_tokenize</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span></li><li class="L5"><span class="kwd">print</span><span class="pun">(</span><span class="pln">token</span><span class="pun">)</span></li></ol><button title="Copy" class="action-code-block copy-code-block multiple-lines"><i class="fa fa-copy" aria-hidden="true"></i><span class="popuptext" id="md-code-block-copy-0">Copied!</span></button></pre>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>spaCy</td>
+          <td>
+            spaCy is an open-source library used in NLP. It provides tools for
+            tasks such as tokenization and word embeddings. The code example
+            shows how you can tokenize text using spaCy word-based tokenizer.
+          </td>
+          <td>
+            <pre
+              class="prettyprint linenums prettyprinted"
+              style=""
+            ><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li></ol><ol class="linenums"><li class="L0"><span class="kwd">import</span><span class="pln"> spacy</span></li><li class="L1"><span class="pln">text </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Unicorns are real. I saw a unicorn yesterday. I couldn't see it today."</span></li><li class="L2"><span class="pln">nlp </span><span class="pun">=</span><span class="pln"> spacy</span><span class="pun">.</span><span class="pln">load</span><span class="pun">(</span><span class="str">"en_core_web_sm"</span><span class="pun">)</span></li><li class="L3"><span class="pln">doc </span><span class="pun">=</span><span class="pln"> nlp</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span></li><li class="L4"><span class="pln">token_list </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">token</span><span class="pun">.</span><span class="pln">text </span><span class="kwd">for</span><span class="pln"> token </span><span class="kwd">in</span><span class="pln"> doc</span><span class="pun">]</span></li><li class="L5"><span class="kwd">print</span><span class="pun">(</span><span class="str">"Tokens:"</span><span class="pun">,</span><span class="pln"> token_list</span><span class="pun">)</span></li></ol><button title="Copy" class="action-code-block copy-code-block multiple-lines"><i class="fa fa-copy" aria-hidden="true"></i><span class="popuptext" id="md-code-block-copy-1">Copied!</span></button></pre>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>BertTokenizer</td>
+          <td>
+            BertTokenizer is a subword-based tokenizer that uses the WordPiece
+            algorithm. The code example shows how you can tokenize text using
+            BertTokenizer.
+          </td>
+          <td>
+            <pre
+              class="prettyprint linenums prettyprinted"
+              style=""
+            ><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li></ol><ol class="linenums"><li class="L0"><span class="kwd">from</span><span class="pln"> transformers </span><span class="kwd">import</span><span class="pln"> </span><span class="typ">BertTokenizer</span></li><li class="L1"><span class="pln">tokenizer </span><span class="pun">=</span><span class="pln"> </span><span class="typ">BertTokenizer</span><span class="pun">.</span><span class="pln">from_pretrained</span><span class="pun">(</span><span class="str">"bert-base-uncased"</span><span class="pun">)</span></li><li class="L2"><span class="pln">tokenizer</span><span class="pun">.</span><span class="pln">tokenize</span><span class="pun">(</span><span class="str">"IBM taught me tokenization."</span><span class="pun">)</span></li></ol><button title="Copy" class="action-code-block copy-code-block multiple-lines"><i class="fa fa-copy" aria-hidden="true"></i><span class="popuptext" id="md-code-block-copy-2">Copied!</span></button></pre>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>XLNetTokenizer</td>
+          <td>
+            XLNetTokenizer tokenizes text using Unigram and SentencePiece
+            algorithms. The code example shows how you can tokenize text using
+            XLNetTokenizer.
+          </td>
+          <td>
+            <pre
+              class="prettyprint linenums prettyprinted"
+              style=""
+            ><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li></ol><ol class="linenums"><li class="L0"><span class="kwd">from</span><span class="pln"> transformers </span><span class="kwd">import</span><span class="pln"> </span><span class="typ">XLNetTokenizer</span></li><li class="L1"><span class="pln">tokenizer </span><span class="pun">=</span><span class="pln"> </span><span class="typ">XLNetTokenizer</span><span class="pun">.</span><span class="pln">from_pretrained</span><span class="pun">(</span><span class="str">"xlnet-base-cased"</span><span class="pun">)</span></li><li class="L2"><span class="pln">tokenizer</span><span class="pun">.</span><span class="pln">tokenize</span><span class="pun">(</span><span class="str">"IBM taught me tokenization."</span><span class="pun">)</span></li></ol><button title="Copy" class="action-code-block copy-code-block multiple-lines"><i class="fa fa-copy" aria-hidden="true"></i><span class="popuptext" id="md-code-block-copy-3">Copied!</span></button></pre>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>torchtext</td>
+          <td>
+            The torchtext library is part of the PyTorch ecosystem and provides
+            the tools and functionalities required for NLP. The code example
+            shows how you can use torchtext to generate tokens and convert them
+            to indices.
+          </td>
+          <td>
+            <pre
+              class="prettyprint linenums prettyprinted"
+              style=""
+            ><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li></ol><ol class="linenums"><li class="L0"><span class="kwd">from</span><span class="pln"> torchtext</span><span class="pun">.</span><span class="pln">vocab </span><span class="kwd">import</span><span class="pln"> build_vocab_from_iterator</span></li><li class="L1"><span class="com"># Defines a dataset</span></li><li class="L2"><span class="pln">dataset </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span></li><li class="L3"><span class="pln">    </span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="str">"Introduction to NLP"</span><span class="pun">),</span></li><li class="L4"><span class="pln">    </span><span class="pun">(</span><span class="lit">2</span><span class="pun">,</span><span class="str">"Basics of PyTorch"</span><span class="pun">),</span></li><li class="L5"><span class="pln">    </span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="str">"NLP Techniques for Text Classification"</span><span class="pun">),</span></li><li class="L6"><span class="pln">    </span><span class="pun">(</span><span class="lit">3</span><span class="pun">,</span><span class="str">"Named Entity Recognition with PyTorch"</span><span class="pun">),</span></li><li class="L7"><span class="pln">    </span><span class="pun">(</span><span class="lit">3</span><span class="pun">,</span><span class="str">"Sentiment Analysis using PyTorch"</span><span class="pun">),</span></li><li class="L8"><span class="pln">    </span><span class="pun">(</span><span class="lit">3</span><span class="pun">,</span><span class="str">"Machine Translation with PyTorch"</span><span class="pun">),</span></li><li class="L9"><span class="pln">    </span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="str">"NLP Named Entity,Sentiment Analysis, Machine Translation"</span><span class="pun">),</span></li><li class="L0"><span class="pln">    </span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="str">"Machine Translation with NLP"</span><span class="pun">),</span></li><li class="L1"><span class="pln">    </span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="str">"Named Entity vs Sentiment Analysis NLP"</span><span class="pun">)]</span></li><li class="L2"><span class="com"># Applies the tokenizer to the text to get the tokens as a list</span></li><li class="L3"><span class="kwd">from</span><span class="pln"> torchtext</span><span class="pun">.</span><span class="pln">data</span><span class="pun">.</span><span class="pln">utils </span><span class="kwd">import</span><span class="pln"> get_tokenizer</span></li><li class="L4"><span class="pln">tokenizer </span><span class="pun">=</span><span class="pln"> get_tokenizer</span><span class="pun">(</span><span class="str">"basic_english"</span><span class="pun">)</span></li><li class="L5"><span class="pln">tokenizer</span><span class="pun">(</span><span class="pln">dataset</span><span class="pun">[</span><span class="lit">0</span><span class="pun">][</span><span class="lit">1</span><span class="pun">])</span></li><li class="L6"><span class="com"># Takes a data iterator as input, processes text from the iterator, </span></li><li class="L7"><span class="com"># and yields the tokenized output individually</span></li><li class="L8"><span class="kwd">def</span><span class="pln"> yield_tokens</span><span class="pun">(</span><span class="pln">data_iter</span><span class="pun">):</span></li><li class="L9"><span class="pln">    </span><span class="kwd">for</span><span class="pln"> _</span><span class="pun">,</span><span class="pln">text </span><span class="kwd">in</span><span class="pln"> data_iter</span><span class="pun">:</span></li><li class="L0"><span class="pln">        </span><span class="kwd">yield</span><span class="pln"> tokenizer</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span></li><li class="L1"><span class="com"># Creates an iterator</span></li><li class="L2"><span class="pln">my_iterator </span><span class="pun">=</span><span class="pln"> yield_tokens</span><span class="pun">(</span><span class="pln">dataset</span><span class="pun">)</span></li><li class="L3"><span class="com"># Fetches the next set of tokens from the data set</span></li><li class="L4"><span class="kwd">next</span><span class="pun">(</span><span class="pln">my_iterator</span><span class="pun">)</span></li><li class="L5"><span class="com"># Converts tokens to indices and sets &lt;unk&gt; as the </span></li><li class="L6"><span class="com"># default word if a word is not found in the vocabulary</span></li><li class="L7"><span class="pln">vocab </span><span class="pun">=</span><span class="pln"> build_vocab_from_iterator</span><span class="pun">(</span><span class="pln">yield_tokens</span><span class="pun">(</span><span class="pln">dataset</span><span class="pun">),</span><span class="pln"> specials</span><span class="pun">=[</span><span class="str">"&lt;unk&gt;"</span><span class="pun">])</span></li><li class="L8"><span class="pln">vocab</span><span class="pun">.</span><span class="pln">set_default_index</span><span class="pun">(</span><span class="pln">vocab</span><span class="pun">[</span><span class="str">"&lt;unk&gt;"</span><span class="pun">])</span></li><li class="L9"><span class="com"># Gives a dictionary that maps words to their corresponding numerical indices</span></li><li class="L0"><span class="pln">vocab</span><span class="pun">.</span><span class="pln">get_stoi</span><span class="pun">()</span></li></ol><button title="Copy" class="action-code-block copy-code-block multiple-lines"><i class="fa fa-copy" aria-hidden="true"></i><span class="popuptext" id="md-code-block-copy-4">Copied!</span></button></pre>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>vocab</td>
+          <td>
+            The vocab object is part of the PyTorch torchtext library. It maps
+            tokens to indices. The code example shows how you can apply the
+            vocab object to tokens directly.
+          </td>
+          <td>
+            <pre
+              class="prettyprint linenums prettyprinted"
+              style=""
+            ><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li></ol><ol class="linenums"><li class="L0"><span class="com"># Takes an iterator as input and extracts the next tokenized sentence. </span></li><li class="L1"><span class="com"># Creates a list of token indices using the vocab dictionary for each token.</span></li><li class="L2"><span class="kwd">def</span><span class="pln"> get_tokenized_sentence_and_indices</span><span class="pun">(</span><span class="pln">iterator</span><span class="pun">):</span></li><li class="L3"><span class="pln">    tokenized_sentence </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">next</span><span class="pun">(</span><span class="pln">iterator</span><span class="pun">)</span></li><li class="L4"><span class="pln">    token_indices </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">vocab</span><span class="pun">[</span><span class="pln">token</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> token </span><span class="kwd">in</span><span class="pln"> tokenized_sentence</span><span class="pun">]</span></li><li class="L5"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> tokenized_sentence</span><span class="pun">,</span><span class="pln"> token_indices</span></li><li class="L6"><span class="com"># Returns the tokenized sentences and the corresponding token indices. </span></li><li class="L7"><span class="com"># Repeats the process.</span></li><li class="L8"><span class="pln">tokenized_sentence</span><span class="pun">,</span><span class="pln"> token_indices </span><span class="pun">=</span><span class="pln"> \</span></li><li class="L9"><span class="pln">get_tokenized_sentence_and_indices</span><span class="pun">(</span><span class="pln">my_iterator</span><span class="pun">)</span></li><li class="L0"><span class="kwd">next</span><span class="pun">(</span><span class="pln">my_iterator</span><span class="pun">)</span></li><li class="L1"><span class="com"># Prints the tokenized sentence and its corresponding token indices.</span></li><li class="L2"><span class="kwd">print</span><span class="pun">(</span><span class="str">"Tokenized Sentence:"</span><span class="pun">,</span><span class="pln"> tokenized_sentence</span><span class="pun">)</span></li><li class="L3"><span class="kwd">print</span><span class="pun">(</span><span class="str">"Token Indices:"</span><span class="pun">,</span><span class="pln"> token_indices</span><span class="pun">)</span></li></ol><button title="Copy" class="action-code-block copy-code-block multiple-lines"><i class="fa fa-copy" aria-hidden="true"></i><span class="popuptext" id="md-code-block-copy-5">Copied!</span></button></pre>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>Special tokens in PyTorch: &lt;eos&gt; and &lt;bos&gt;</td>
+          <td>
+            Special tokens are tokens introduced to input sequences to convey
+            specific information or serve a particular purpose during training.
+            The code example shows the use of &lt;bos&gt; and &lt;eos&gt; during
+            tokenization. The &lt;bos&gt; token denotes the beginning of the
+            input sequence, and the &lt;eos&gt; token denotes the end.
+          </td>
+          <td>
+            <pre
+              class="prettyprint linenums prettyprinted"
+              style=""
+            ><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li></ol><ol class="linenums"><li class="L0"><span class="com"># Appends &lt;bos&gt; at the beginning and &lt;eos&gt; at the end of the tokenized sentences </span></li><li class="L1"><span class="com"># using a loop that iterates over the sentences in the input data</span></li><li class="L2"><span class="pln">tokenizer_en </span><span class="pun">=</span><span class="pln"> get_tokenizer</span><span class="pun">(</span><span class="str">'spacy'</span><span class="pun">,</span><span class="pln"> language</span><span class="pun">=</span><span class="str">'en_core_web_sm'</span><span class="pun">)</span></li><li class="L3"><span class="pln">tokens </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[]</span></li><li class="L4"><span class="pln">max_length </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span></li><li class="L5"><span class="kwd">for</span><span class="pln"> line </span><span class="kwd">in</span><span class="pln"> lines</span><span class="pun">:</span></li><li class="L6"><span class="pln">    tokenized_line </span><span class="pun">=</span><span class="pln"> tokenizer_en</span><span class="pun">(</span><span class="pln">line</span><span class="pun">)</span></li><li class="L7"><span class="pln">    tokenized_line </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">'&lt;bos&gt;'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> tokenized_line </span><span class="pun">+</span><span class="pln"> </span><span class="pun">[</span><span class="str">'&lt;eos&gt;'</span><span class="pun">]</span></li><li class="L8"><span class="pln">    tokens</span><span class="pun">.</span><span class="pln">append</span><span class="pun">(</span><span class="pln">tokenized_line</span><span class="pun">)</span></li><li class="L9"><span class="pln">    max_length </span><span class="pun">=</span><span class="pln"> max</span><span class="pun">(</span><span class="pln">max_length</span><span class="pun">,</span><span class="pln"> len</span><span class="pun">(</span><span class="pln">tokenized_line</span><span class="pun">))</span></li></ol><button title="Copy" class="action-code-block copy-code-block multiple-lines"><i class="fa fa-copy" aria-hidden="true"></i><span class="popuptext" id="md-code-block-copy-6">Copied!</span></button></pre>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>Special tokens in PyTorch: &lt;pad&gt;</td>
+          <td>
+            The code example shows the use of &lt;pad&gt; token to ensure all
+            sentences have the same length.
+          </td>
+          <td>
+            <pre
+              class="prettyprint linenums prettyprinted"
+              style=""
+            ><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li></ol><ol class="linenums"><li class="L0"><span class="com"># Pads the tokenized lines</span></li><li class="L1"><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> range</span><span class="pun">(</span><span class="pln">len</span><span class="pun">(</span><span class="pln">tokens</span><span class="pun">)):</span></li><li class="L2"><span class="pln">    tokens</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> tokens</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="pun">[</span><span class="str">'&lt;pad&gt;'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> </span><span class="pun">(</span><span class="pln">max_length </span><span class="pun">-</span><span class="pln"> len</span><span class="pun">(</span><span class="pln">tokens</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]))</span></li></ol><button title="Copy" class="action-code-block copy-code-block multiple-lines"><i class="fa fa-copy" aria-hidden="true"></i><span class="popuptext" id="md-code-block-copy-7">Copied!</span></button></pre>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>Dataset class in PyTorch</td>
+          <td>
+            The Dataset class enables accessing and retrieving individual
+            samples from a data set. The code example shows how you can create a
+            custom data set and access samples.
+          </td>
+          <td>
+            <pre
+              class="prettyprint linenums prettyprinted"
+              style=""
+            ><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li></ol><ol class="linenums"><li class="L0"><span class="com"># Imports the Dataset class and defines a list of sentences</span></li><li class="L1"><span class="kwd">from</span><span class="pln"> torch</span><span class="pun">.</span><span class="pln">utils</span><span class="pun">.</span><span class="pln">data </span><span class="kwd">import</span><span class="pln"> </span><span class="typ">Dataset</span></li><li class="L2"><span class="pln">sentences </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">"If you want to know what a man's like, take a </span></li><li class="L3"><span class="str">good look at how he treats his inferiors, not his equals."</span><span class="pun">,</span><span class="pln"> </span></li><li class="L4"><span class="str">"Fae's a fickle friend, Harry."</span><span class="pun">]</span></li><li class="L5"><span class="com"># Downloads and reads data</span></li><li class="L6"><span class="kwd">class</span><span class="pln"> </span><span class="typ">CustomDataset</span><span class="pun">(</span><span class="typ">Dataset</span><span class="pun">):</span></li><li class="L7"><span class="pln">    </span><span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln"> sentences</span><span class="pun">):</span></li><li class="L8"><span class="pln">        </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">sentences </span><span class="pun">=</span><span class="pln"> sentences</span></li><li class="L9"><span class="pln">    </span><span class="com"># Returns the data length</span></li><li class="L0"><span class="pln">    </span><span class="kwd">def</span><span class="pln"> __len__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span></li><li class="L1"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> len</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">sentences</span><span class="pun">)</span></li><li class="L2"><span class="pln">    </span><span class="com"># Returns one item on the index</span></li><li class="L3"><span class="pln">    </span><span class="kwd">def</span><span class="pln"> __getitem__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln"> idx</span><span class="pun">):</span></li><li class="L4"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">sentences</span><span class="pun">[</span><span class="pln">idx</span><span class="pun">]</span></li><li class="L5"><span class="com"># Creates a dataset object</span></li><li class="L6"><span class="pln">dataset</span><span class="pun">=</span><span class="typ">CustomDataset</span><span class="pun">(</span><span class="pln">sentences</span><span class="pun">)</span></li><li class="L7"><span class="com"># Accesses samples like in a list</span></li><li class="L8"><span class="pln">E</span><span class="pun">.</span><span class="pln">g</span><span class="pun">.,</span><span class="pln"> dataset</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]</span></li></ol><button title="Copy" class="action-code-block copy-code-block multiple-lines"><i class="fa fa-copy" aria-hidden="true"></i><span class="popuptext" id="md-code-block-copy-8">Copied!</span></button></pre>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>DataLoader class in PyTorch</td>
+          <td>
+            A DataLoader class enables efficient loading and iteration over data
+            sets for training deep learning models. The code example shows how
+            you can use the DataLoader class to generate batches of sentences
+            for further processing, such as training a neural network model
+          </td>
+          <td>
+            <pre
+              class="prettyprint linenums prettyprinted"
+              style=""
+            ><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li></ol><ol class="linenums"><li class="L0"><span class="com"># Creates an iterator object</span></li><li class="L1"><span class="pln">data_iter </span><span class="pun">=</span><span class="pln"> iter</span><span class="pun">(</span><span class="pln">dataloader</span><span class="pun">)</span></li><li class="L2"><span class="com"># Calls the next function to return new batches of samples</span></li><li class="L3"><span class="kwd">next</span><span class="pun">(</span><span class="pln">data_iter</span><span class="pun">)</span></li><li class="L4"><span class="com"># Creates an instance of the custom data set</span></li><li class="L5"><span class="kwd">from</span><span class="pln"> torch</span><span class="pun">.</span><span class="pln">utils</span><span class="pun">.</span><span class="pln">data </span><span class="kwd">import</span><span class="pln"> </span><span class="typ">DataLoader</span></li><li class="L6"><span class="pln">custom_dataset </span><span class="pun">=</span><span class="pln"> </span><span class="typ">CustomDataset</span><span class="pun">(</span><span class="pln">sentences</span><span class="pun">)</span></li><li class="L7"><span class="com"># Specifies a batch size</span></li><li class="L8"><span class="pln">batch_size </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span></li><li class="L9"><span class="com"># Creates a data loader</span></li><li class="L0"><span class="pln">dataloader </span><span class="pun">=</span><span class="pln"> </span><span class="typ">DataLoader</span><span class="pun">(</span><span class="pln">custom_dataset</span><span class="pun">,</span><span class="pln"> batch_size</span><span class="pun">=</span><span class="pln">batch_size</span><span class="pun">,</span><span class="pln"> shuffle</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span></li><li class="L1"><span class="com"># Prints the sentences in each batch</span><br></li><li class="L2"><span class="kwd">for</span><span class="pln"> batch </span><span class="kwd">in</span><span class="pln"> dataloader</span><span class="pun">:</span></li><li class="L3"><span class="pln">    </span><span class="kwd">print</span><span class="pun">(</span><span class="pln">batch</span><span class="pun">)</span></li></ol><button title="Copy" class="action-code-block copy-code-block multiple-lines"><i class="fa fa-copy" aria-hidden="true"></i><span class="popuptext" id="md-code-block-copy-9">Copied!</span></button></pre>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>Custom collate function in PyTorch</td>
+          <td>
+            The custom collate function is a user-defined function that defines
+            how individual samples are collated or batched together. You can
+            utilize the collate function for tasks such as tokenization,
+            converting tokenized indices, and transforming the result into a
+            tensor. The code example shows how you can use a custom collate
+            function in a data loader.
+          </td>
+          <td>
+            <pre
+              class="prettyprint linenums prettyprinted"
+              style=""
+            ><ol class="formatted-line-numbers"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li></ol><ol class="linenums"><li class="L0"><span class="com"># Defines a custom collate function</span></li><li class="L1"><span class="kwd">def</span><span class="pln"> collate_fn</span><span class="pun">(</span><span class="pln">batch</span><span class="pun">):</span></li><li class="L2"><span class="pln">    tensor_batch </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[]</span></li><li class="L3"><span class="com"># Tokenizes each sample in the batch</span></li><li class="L4"><span class="pln">    </span><span class="kwd">for</span><span class="pln"> sample </span><span class="kwd">in</span><span class="pln"> batch</span><span class="pun">:</span></li><li class="L5"><span class="pln">        tokens </span><span class="pun">=</span><span class="pln"> tokenizer</span><span class="pun">(</span><span class="pln">sample</span><span class="pun">)</span></li><li class="L6"><span class="com"># Maps tokens to numbers using the vocab</span></li><li class="L7"><span class="pln">        tensor_batch</span><span class="pun">.</span><span class="pln">append</span><span class="pun">(</span><span class="pln">torch</span><span class="pun">.</span><span class="pln">tensor</span><span class="pun">([</span><span class="pln">vocab</span><span class="pun">[</span><span class="pln">token</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> token </span><span class="kwd">in</span><span class="pln"> tokens</span><span class="pun">]))</span></li><li class="L8"><span class="com"># Pads the sequences within the batch to have equal lengths</span></li><li class="L9"><span class="pln">    padded_batch </span><span class="pun">=</span><span class="pln"> pad_sequence</span><span class="pun">(</span><span class="pln">tensor_batch</span><span class="pun">,</span><span class="pln">batch_first</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">)</span></li><li class="L0"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> padded_batch</span></li><li class="L1"><span class="com"># Creates a data loader using the collate function and the custom dataset</span></li><li class="L2"><span class="pln">dataloader </span><span class="pun">=</span><span class="pln"> </span><span class="typ">DataLoader</span><span class="pun">(</span><span class="pln">custom_dataset</span><span class="pun">,</span><span class="pln"> batch_size</span><span class="pun">=</span><span class="pln">batch_size</span><span class="pun">,</span><span class="pln"> shuffle</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">,</span><span class="pln"> collate_fn</span><span class="pun">=</span><span class="pln">collate_fn</span><span class="pun">)</span></li></ol><button title="Copy" class="action-code-block copy-code-block multiple-lines"><i class="fa fa-copy" aria-hidden="true"></i><span class="popuptext" id="md-code-block-copy-10">Copied!</span></button></pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <img
+        src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/nRmYgyM2KjRIIiG16R7ikg/ibmsn-footer-blue.png"
+        alt=""
+      />
+    </p>
+  </body>
+</html>
